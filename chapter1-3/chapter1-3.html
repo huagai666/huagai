@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- metadata goes here -->
+    <title>Example</title>
+    <style>
+        .class1 {
+            font-size: x-large;
+        }
+
+        .class2 {
+            background-color: grey;
+            color: white;
+            padding: 5px;
+            margin: 2px;
+        }
+    </style>
+    <style>
+        #w3clink {
+            background-color: grey;
+            color: white;
+            padding: 15px;
+            border: thin solid red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 第1-3章开始 -->
+    <!-- content and elements go here -->
+    <!-- I like <code>apples</code> and oranges. -->
+
+    <!-- <form action="">
+            Name: <input type="text" accesskey="n">
+            <p />
+            Password:<input type="text" accesskey="p">
+            <p />
+            <input type="submit" value="Log In" accesskey="s">
+        </form> -->
+    <a id="baidu" class="class1 class2" href="http://wwww.baidu.com">This is website "baidu".</a>
+    <p />
+    <a class="class2 otherclass" href="https://www.w3.org"> W3c web site</a>
+    <!-- https://www.w3.org/ -->
+    <hr />
+    <script>
+        var elems = document.getElementsByClassName("otherclass");
+        for (i = 0; i < elems.length; i++) {
+            var x = elems[i];
+            x.style.border = "thin solid black";
+            x.style.backgroundColor = "white";
+            x.style.color = "black";
+        }
+    </script>
+    <hr />
+    <!-- contenteditable -->
+    <p contenteditable="true">It is raining right now.</p>
+    <hr />
+    <p dir="rtl">This is right to left测试。</p>
+    <p dir="ltr">This is left to right.。</p>
+    <hr />
+    <button type="submit" onclick="Toggle()">Toggle</button>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+        </tr>
+        <tr>
+            <td>Adam Freeman &nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>Anne Jones</td>
+        </tr>
+        <tr id="showOrHide" hidden>
+            <td>&nbsp;&nbsp;&nbsp;Joe Smith</td>
+            <td>&nbsp;New York</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;London</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;Paris</td>
+        </tr>
+    </table>
+    <script>
+        var Toggle = function () {
+            var elem = document.getElementById("showOrHide");
+            if (elem.hasAttribute("hidden")) {
+                // elem.setAttribute("hidden", "false");
+                elem.removeAttribute("hidden");
+            } else {
+                elem.setAttribute("hidden", "");
+            }
+        }
+    </script>
+    <hr />
+    <a href="#baidu">找到百度所在的位置</a>
+    <p />
+    <a id="w3clink" href="https://cn.bing.com/">Bing搜索引擎</a>
+    <hr />
+    <p lang="en">How are you?</p>
+    <hr />
+    <textarea spellcheck="true" name="" id="" cols="30" rows="10">This is some misspelled text</textarea>
+    <hr />
+    <a href="#" style="background-color: grey; color: white; padding: 10px;"> Visit the Apress site </a>
+    <hr />
+    <form action="">
+        <label for="">Name: <input type="text" name="name" tabindex="1"></label>
+        <label for="">City:<input type="text" name="city" tabindex="-1"></label>
+        <label for="">Country:<input type="text" name="country" tabindex="2"></label>
+    </form>
+    <br />
+    <hr />
+    <a href="http://apress.com" title="Apress Publishing">Visit the Apress Site</a>
+    <hr />
+    Enter your name: <input type="text" disabled>
+    <hr />
+    Enter your name: <input type="text" disabled data-creator="Jean" data-purpose="collection">
+    <hr />
+    <!-- 第1-3章结束 -->
+</body>
+
+</html>

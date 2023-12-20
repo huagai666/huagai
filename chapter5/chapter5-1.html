@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第5章：初探JavaScript</title>
+</head>
+<body>
+    <p></p>
+    <script>
+    //    document.writeln("Hello");
+    //    document.writeln("<p>World</p>");
+    //    document.write("<p>Hello</p>");
+    //    document.write("World");
+    // for (var i=0; i<5; i++) {
+    //     document.writeln("野生技术猫hellow<br />");
+    // }
+    // document.writeln("This is a statement<br />");
+    // document.writeln("This is also a statement")
+//     // function myFunc() {
+//     //     document.writeln("This is a statement");
+//     // }
+//     // myFunc();
+
+// /*     function myFunc(name, weather) {
+//         document.writeln("Hello, " + name + ".");
+//         document.writeln("It is " + weather + " today.");
+//     }
+//      myFunc("周一本", "sunny"); */
+// /*     // function myFunc(name) {
+//         return ("Hello, " + name);
+//     }
+//     document.writeln(myFunc("Jean")); */
+// /*     var myGlobalVar = "apples";
+
+//     function myFunc(name) {
+//         var myLocalVar = "sunny";
+//         document.writeln("<br />I like " + myGlobalVar + "<br />");
+//         return ("Hello, " + name + ". Today is " + myLocalVar + ".");
+//     }
+//      document.writeln("<br />I like " + myLocalVar + "<br />");
+//     document.writeln(myFunc("Jean")); */
+    </script>
+ <script>
+//         // document.writeln("<br />I like " + myGlobalVar);
+//         // var firstString = "This is a string";
+//         // var secondString = 'And so is this'
+//         // var firstBool = true;
+//         // var secondbool = false;
+//         // var daysInWeek = 7; // integer
+//         // var pi = 3.14;
+//         // // var hexValue = 0xFFFF;
+//         // var myData = new Object();
+//         // myData.name = "Jean";
+//         // myData.weather = "sunny";
+//         // document.writeln("Hello, " + myData.name + ".");
+//         // document.writeln("Today is " + myData.weather + ".");
+//         var myData = {
+//             name: "Jean",
+//             weather: "sunny",
+//             printMessages: function() {
+//                 document.writeln("Hello, " + this.name + ".");
+//                 document.writeln("Today is "+ this.weather + ".");
+//             }
+//         };
+//         // document.writeln("Hello, " + myData.name + ".");
+//         // document.writeln("Today is " + myData.weather + ".");
+//         // myData.printMessages();
+//         // myData.name = "周一本";
+//         // myData['weather'] = "rainy";
+//         // // myData.printMessages();
+//         // var propName = 'weather';
+//         // document.writeln("Hello, " + myData.name + ".");
+//         // document.writeln("Today is " + myData[propName] + ".");
+
+//         // myData.dayOfWeek = "Friday";
+//         // myData["daysOfTheWeek"] = 7;
+
+//         myData.sayHello = function() {
+//             document.writeln("Hello.");
+//         }
+
+//         // delete myData("name");
+//     /*     delete myData.name;
+//         // delete myData['weather'];
+//         // delete myData['weather']
+//         // delete myData['weather'];
+//         delete myData["weather"];
+//         delete myData["printMessages"];
+//         delete myData.sayHello; */
+
+//         for (var prop in myData) {
+//             document.writeln("<pre>Property Name: " + prop + "&nbsp&nbsp" + "Property Value:" + myData[prop] + "</ pre>");
+//             }
+
+//         var hasName = "name" in myData;
+//         var hasDate = "date" in myData;
+
+//         document.writeln("HasName: " + hasName);
+//         document.writeln("HasDate: " + hasDate);
+
+    // var firstVal = 5;
+    // var secondVal = "5";
+
+    // if (firstVal == secondVal) {
+    //     document.writeln("Use \"==\" operator: they are the same.<p />");
+    // } else {
+    //     document.writeln("Use \"==\" operator: they are NOT the same.<p />");
+    // }
+
+    // if (firstVal === secondVal) {
+    //     document.writeln("Use \"===\" operator: they are the same.<p />");
+    // } else {
+    //     document.writeln("Use \"===\"operator: they are NOT the same.<p />");
+    // }
+
+    var myData1 = {
+        name: "Jean",
+        weather: "sunny"
+    };
+    var myData2 = {
+        name: "Jean",
+        weather: "weather"
+    };
+
+    var myData3 = myData2;
+
+    var test1 = myData1 == myData2; // false
+    var test2 = myData2 == myData3; // true
+    var test3 = myData1 === myData2; // false
+    var test4 = myData2 === myData3; // true;
+
+    document.writeln("Test 1: " + test1 + " Test 2: " + test2 + "<br />");
+    document.writeln("Test 3: " + test3 + " Test 4: " + test4);
+    </script>
+    <hr>
+    <script>
+        try {
+            // var myArry = [1, "This is a statement", 3];
+            var myArry;
+            for (var i = 0; i < myArry.length; i++) {
+                document.writeln("Index " + i + ": " + myArry[i] + "<br />");
+            }
+        } catch(e) {
+            document.writeln(e.name + ": " + e.message + "<br />");
+        } finally {
+            document.writeln("Statements here are always executed.")
+        }
+    </script>
+    <hr>
+    <script>
+        var test;
+        var myData = {
+            name: "Jean",
+            weather: "sunny"
+        };
+
+        document.writeln("Prop: " + myData.doesntexist);
+        document.writeln("Prop: " + test);
+    </script>
+    <hr>
+    <script>
+        var myData = {
+            name: "Jean"
+        };
+        document.writeln("Var: " + myData.weather + "<br />");
+        document.writeln("Prop: " + ("weather" in myData) + "<br />");
+
+        myData.weather = "sunny";
+        document.writeln("Var: " + myData.weather + "<br />");
+        document.writeln("Prop: " + ("weather" in myData) + "<br />");
+
+        myData.weather = null;
+        document.writeln("Var: " + myData.weather + "<br />");
+        document.writeln("Prop: " + ("weather" in myData) + "<br />");
+
+    </script>
+    <hr>
+    <script>
+        var myData = {
+            name: "Jean",
+            city: null
+        };
+        if (!myData.name) {
+            document.writeln("name IS null or undefined.<br />");
+        } else {
+            document.writeln("name is NOT null or undefined.<br />");
+
+        }
+        if (!myData.city) {
+            document.writeln("city IS null or undefined.");
+        } else {
+            document.writeln("city is NOT null or undefined.");
+
+        }
+    </script>
+    <hr>
+    <script>
+        var firstVal = null;
+        var secondVar;
+
+        var equality = firstVal == secondVar;   // true
+        var identity = firstVal === secondVar;  // false
+
+        document.writeln("Equality: " + equality + "<br />");
+        document.writeln("Identity: " + identity + "<br />");
+    </script>
+</body>
+</html>
